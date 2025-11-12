@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP客户申请</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            display: none;
+        }
+        .cry-face {
+            font-size: 100px;
+            margin-top: 20px;
+        }
+        .smile-message {
+            font-size: 20px;
+            color: #ff6600;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="step1" class="question">
+            <h2>你是否愿意成为VIP客户？</h2>
+            <button onclick="selectOption('yes')">是</button>
+            <button onclick="selectOption('no')">否</button>
+        </div>
+
+        <div id="step2-yes" class="result">
+            <p class="smile-message">系统检测到您是首位用户，特开通绿色通道——支付「一个发自内心的大笑」即可成为VIP！</p>
+            <p>😄 感谢您的参与！请大笑一声，您已成功成为VIP。</p>
+        </div>
+
+        <div id="step2-no" class="result">
+            <p>很遗憾您选择了否，以下是您的哭脸画：</p>
+            <div class="cry-face">😢</div>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(choice) {
+            document.getElementById('step1').style.display = 'none';
+            if (choice === 'yes') {
+                document.getElementById('step2-yes').style.display = 'block';
+            } else if (choice === 'no') {
+                document.getElementById('step2-no').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
